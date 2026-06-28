@@ -14,13 +14,60 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #6b928c;
     --foreground: #ededed;
   }
 }
 
 body {
-  background: var(--background);
+  margin: 0;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  background-image: url("/background.jpg");
+  background-repeat: repeat-y;
+  background-position: top center;
+  background-size: 100% auto;
+}
+
+button {
+  background: #76bf71;
+  border-radius: 100px;
+  color: white;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(0.65rem, 1.5vw, 3rem);
+  line-height: 1;
+  width: 25%;
+  height: 10%;
+  padding: 0.5em 1.25em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 480px) {
+  button {
+    font-size: 0.55rem;
+    width: 42%;
+    padding: 0.35em 0.85em;
+  }
+}
+
+.header-div {
+  /* Keeps a stable visual offset while adapting slightly to viewport size */
+  padding-top: calc(env(safe-area-inset-top, 0px) + clamp(1rem, 2.4vw, 3rem));
+}
+
+.btn {
+  width: fit-content;
+  background: #46714c;
+  color: white;
+  font: Avenir Next, sans-serif;
+  margin-right: clamp(0.4rem, 1.2vw, 0.8rem);
+}
+
+.btn:last-child {
+  margin-right: 5px;
 }
